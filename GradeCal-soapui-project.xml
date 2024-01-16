@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2b3eadbd-be6d-4724-9880-0538756d3e66" activeEnvironment="Default" name="GradeCal" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f1db6bb1-c394-4dce-9120-35383ddfb20f" wsaVersion="NONE" name="GradeCalSoapBinding" type="wsdl" bindingName="{http://calculator.gradecal.com}GradeCalSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/nayan/eclipse-workspace/Question1/src/main/webapp/wsdl/GradeCal.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\nayan\eclipse-workspace\Question1\src\main\webapp\wsdl\GradeCal.wsdl"><con:part><con:url>file:\C:\Users\nayan\eclipse-workspace\Question1\src\main\webapp\wsdl\GradeCal.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://calculator.gradecal.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://calculator.gradecal.com" xmlns:intf="http://calculator.gradecal.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://calculator.gradecal.com" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="grade">
+        <complexType>
+          <sequence>
+            <element name="marks" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="gradeResponse">
+        <complexType>
+          <sequence>
+            <element name="gradeReturn" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="gradeRequest">
+    <wsdl:part element="impl:grade" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="gradeResponse">
+    <wsdl:part element="impl:gradeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GradeCal">
+    <wsdl:operation name="grade">
+      <wsdl:input message="impl:gradeRequest" name="gradeRequest"></wsdl:input>
+      <wsdl:output message="impl:gradeResponse" name="gradeResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GradeCalSoapBinding" type="impl:GradeCal">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="grade">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="gradeRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="gradeResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GradeCalService">
+    <wsdl:port binding="impl:GradeCalSoapBinding" name="GradeCal">
+      <wsdlsoap:address location="http://localhost:8080/Question1/services/GradeCal"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/Question1/services/GradeCal</con:endpoint></con:endpoints><con:operation id="4cd038ac-5769-4525-a56f-bfff88b5a3c3" isOneWay="false" action="" name="grade" bindingOperationName="grade" type="Request-Response" outputName="gradeResponse" inputName="gradeRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a83ebcf2-93d4-4df9-956e-23cbd908150e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Question1/services/GradeCal</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.gradecal.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cal:grade>\r
+         <cal:marks>98</cal:marks>\r
+      </cal:grade>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.gradecal.com/GradeCal/gradeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
